@@ -3,7 +3,7 @@ import json,os
 import mysql.connector
 
 app=Flask(__name__)
-FILE_PATH = "users.json"
+
 db=mysql.connector.connect(
     host="localhost",
     user="root",
@@ -21,6 +21,7 @@ def create_user():
     cursor.execute(query, values)
     db.commit()
     return jsonify({"message": "User created successfully"}), 201
+
 #To Get all users details
 @app.route("/users", methods=["GET"])
 def get_all_users():
@@ -42,7 +43,6 @@ def get_user(user_id):
     else:
         return jsonify({"error": "User not found"}), 404
     
-
 #Updating User
 @app.route("/users/<int:user_id>", methods=["PUT"])
 def update_user(user_id):
@@ -57,7 +57,6 @@ def update_user(user_id):
     cursor.execute(query, values)
     db.commit()
     
-
 #Deleting a user
 @app.route("/users/<int:user_id>",methods=['DELETE'])
 def delete_user(user_id):
