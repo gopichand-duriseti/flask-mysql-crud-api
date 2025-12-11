@@ -65,7 +65,7 @@ def update_user(user_id):
         existing_name, existing_email, existing_mobile, existing_password = user
         data = request.get_json()
 
-        # Use new value if given or else keep existing
+        #Use new value if given or else keep existing
         new_name = data.get("name", existing_name)
         new_email = data.get("email", existing_email)
         new_mobile = data.get("mobileNumber", existing_mobile)
