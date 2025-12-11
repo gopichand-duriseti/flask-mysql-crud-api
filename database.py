@@ -15,4 +15,5 @@ db=mysql.connector.connect(
     password=db_password,
     database=db_database
     )
+
 cursor=db.cursor()
