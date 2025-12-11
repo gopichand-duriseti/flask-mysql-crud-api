@@ -47,7 +47,7 @@ def get_user(user_id):
             return jsonify({"error": "User not found"}), 404
 
     except Exception as e:
-        # Any error will come here safely
+        #Any error will come here safely
         return jsonify({"error": "Server error: " + str(e)}), 500
 
 #UPDATING User
