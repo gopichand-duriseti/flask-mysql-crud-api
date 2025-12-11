@@ -34,7 +34,6 @@ def get_user(user_id):
         query = "SELECT id, name, email, mobileNumber FROM users WHERE id = %s"
         cursor.execute(query, (user_id,))
         user = cursor.fetchone()
-
         if user:
             user_dict = {
                 "id": user[0],
