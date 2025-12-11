@@ -98,8 +98,8 @@ USE usersdb;
 CREATE TABLE users (
     id INT PRIMARY KEY,
     name VARCHAR(100),
-    email VARCHAR(100),
-    mobileNumber VARCHAR(15),
+    email VARCHAR(100) unique,
+    mobileNumber VARCHAR(15) unique,
     password VARCHAR(255)
 );
 ```
